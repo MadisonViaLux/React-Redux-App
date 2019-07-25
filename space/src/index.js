@@ -1,5 +1,15 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { createStore, applyMiddleware } from 'redux';
+import { Provider } from 'react-redux';
+import thunk from 'redux-thunk';
+
+import { reducer } from './store/reducers';
+
+
+
+
+const store =createStore(reducer, applyMiddleware(thunk))
 
 
 function App() {
@@ -10,4 +20,13 @@ function App() {
     );
   }
 
-ReactDOM.render(<App />, document.getElementById('root'));
+
+
+
+
+
+
+ReactDOM.render(
+<Provider store={store}>
+    <App />
+</Provider>, document.getElementById('root'));
