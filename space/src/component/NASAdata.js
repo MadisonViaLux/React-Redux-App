@@ -22,7 +22,7 @@ const NASAdata = props => {
 
             <h1>{props.title}</h1>
 
-            <img src={props.photoOfTheDay} alt='There should be something here...?' />
+            <img src={props.photoOfTheDay} alt={null} />
 
             {props.error && <p> {props.error} </p>}
 
@@ -30,7 +30,7 @@ const NASAdata = props => {
                 <Loader type="Ball-Triangle" color="#00BFFF" height="90" width="60" />
             )}
 
-            <button onClick={grabbingPhoto}>ClIcK mE</button>
+            <button onClick={grabbingPhoto}>Click Me!</button>
 
 
 
