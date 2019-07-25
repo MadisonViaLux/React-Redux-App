@@ -24,18 +24,19 @@ const NASAdata = props => {
                 {/* <h1>{props.title}</h1> */}
             </div>
 
-            <img src={props.photoOfTheDay} alt={null} />
+            <img className='dailyPhoto' src={props.photoOfTheDay} alt={null} />
 
             {props.error && <p> {props.error} </p>}
 
-            {props.isLoading && (
-                <Loader type="Ball-Triangle" color="#00BFFF" height="90" width="60" />
-            )}
+            <div>
+                {props.isLoading && (
+                    <Loader type="Ball-Triangle" color="#00BFFF" height="90" width="60" />
+                )}
 
-            <button onClick={grabbingPhoto}>Render Me!</button>
+                <button onClick={grabbingPhoto}>Render Me!</button>
 
-            <button onClick={props.getRidPhoto}>Remove Me!</button>
-
+                <button onClick={props.getRidPhoto}>Remove Me!</button>
+            </div>    
 
 
         </div>
