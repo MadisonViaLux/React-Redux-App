@@ -7,6 +7,8 @@ import logger from 'redux-logger'
 
 import { reducer } from './store/reducers/index';
 
+import NASAdata from './component/NASAdata'
+
 
 
 
@@ -16,8 +18,11 @@ const store =createStore(reducer, applyMiddleware(thunk, logger))
 function App() {
     return (
       <div className="App">
+          
         <h1>hello</h1>
-        
+
+        <NASAdata />
+
       </div>
     );
   }
