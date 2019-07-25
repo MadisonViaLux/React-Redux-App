@@ -4,6 +4,7 @@ import { connect } from "react-redux";
 import { getPhoto, getRidPhoto } from '../store/actions/index'
 
 
+
 const NASAdata = props => {
 
 
@@ -17,10 +18,11 @@ const NASAdata = props => {
 
     return(
         <div>
+            <div>
+                <h2>Click to reveal data: {props.title}</h2>
 
-            <h2>click to render data</h2>
-
-            <h1>{props.title}</h1>
+                {/* <h1>{props.title}</h1> */}
+            </div>
 
             <img src={props.photoOfTheDay} alt={null} />
 

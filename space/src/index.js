@@ -4,6 +4,7 @@ import { createStore, applyMiddleware } from 'redux';
 import { Provider } from 'react-redux';
 import thunk from 'redux-thunk';
 import logger from 'redux-logger'
+import './style.scss'
 
 import { reducer } from './store/reducers/index';
 
@@ -18,8 +19,8 @@ const store =createStore(reducer, applyMiddleware(thunk, logger))
 function App() {
     return (
       <div className="App">
-          
-        <h1>hello</h1>
+
+        <h1>NASA data of the day!</h1>
 
         <NASAdata />
 
