@@ -12,7 +12,22 @@ const initialState = {
   };
 
 export const reducer = (state = initialState, action) => {
+    console.log('this is the reducer', action)
     switch(action.type){
+
+        // case FETCH_PHOTO_START:
+        //     return {
+        //         ...state,
+        //         error: 'You done messed up your code bruh..',
+        //         isLoading: true
+        //     };
+
+        // case FETCH_PHOTO_SUCCESS:
+        //     return{
+        //         ...state,
+        //         isLoading: false,
+
+        //     }
 
     }
 }
