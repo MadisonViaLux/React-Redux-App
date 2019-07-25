@@ -5,15 +5,20 @@ import {
     REMOVE_CONTENT
   } from "../actions";
 
+
+
 const initialState = {
     photoOfTheDay: null,
     error: "",
     isLoading: false,
-    title: ""
+    title: "",
+    info: ""
   };
 
+
+
 export const reducer = (state = initialState, action) => {
-    console.log('this is the reducer', action)
+    // console.log('this is the reducer', action.payload)
     switch(action.type){
 
         case FETCH_PHOTO_START:
@@ -29,7 +34,8 @@ export const reducer = (state = initialState, action) => {
                 isLoading: false,
                 error: '',
                 photoOfTheDay: action.payload.url,
-                title: action.payload.title
+                title: action.payload.title,
+                info: action.payload.explanation
             };
 
         case FETCH_PHOTO_FAILURE:
@@ -43,7 +49,8 @@ export const reducer = (state = initialState, action) => {
             return{
                 ...state,
                 photoOfTheDay: null,
-                title: ''
+                title: '',
+                info: ''
             }
 
         default: return state;

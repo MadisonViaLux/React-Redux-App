@@ -13,7 +13,7 @@ const NASAdata = props => {
         props.getPhoto();
     };
 
-
+    console.log(props.info)
 
 
     return(
@@ -24,14 +24,19 @@ const NASAdata = props => {
                 {/* <h1>{props.title}</h1> */}
             </div>
 
-            <img className='dailyPhoto' src={props.photoOfTheDay} alt={null} />
-
-            {props.error && <p> {props.error} </p>}
-
             <div>
-                {props.isLoading && (
-                    <Loader type="Ball-Triangle" color="#00BFFF" height="90" width="60" />
-                )}
+                <img className='dailyPhoto' src={props.photoOfTheDay} alt={''} />
+
+                {props.error && <p> {props.error} </p>}
+
+                <p>{props.info}</p>
+            </div>
+
+            {props.isLoading && (
+                <Loader type="Ball-Triangle" color="#00BFFF" height="90" width="60" />
+            )}
+            
+            <div className='buttonBottom'>
 
                 <button onClick={grabbingPhoto}>Render Me!</button>
 
@@ -50,7 +55,8 @@ const mapStateToProps = state => {
         error: state.error,
         isLoading: state.isLoading,
         photoOfTheDay: state.photoOfTheDay,
-        title: state.title
+        title: state.title,
+        info: state.info
     }
 }
 
