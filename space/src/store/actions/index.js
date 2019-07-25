@@ -15,6 +15,17 @@ export const getPhoto = () => dispatch => {
         .get('https://api.nasa.gov/planetary/apod?api_key=OIjcB7SKIhacbA4b2VAIMDCuJVNhD93xdfB8szOh')
         .then(res => {
             console.log(res.data)
+            dispatch({
+                type: FETCH_PHOTO_SUCCESS,
+                payload: res.data
+            })
+        })
+        .catch( ({error}) => {
+            console.log(error);
+            dispatch({
+                type: FETCH_PHOTO_FAILURE,
+                payload: error
+            })
         })
 
 }
