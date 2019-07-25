@@ -9,7 +9,7 @@ const NASAdata = props => {
 
     const grabbingPhoto = e => {
         e.preventDefault();
-        props.getPhoto
+        props.getPhoto();
     };
 
 
