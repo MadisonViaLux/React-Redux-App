@@ -1,7 +1,8 @@
 import {
     FETCH_PHOTO_START,
     FETCH_PHOTO_SUCCESS,
-    FETCH_PHOTO_FAILURE
+    FETCH_PHOTO_FAILURE,
+    REMOVE_CONTENT
   } from "../actions";
 
 const initialState = {
@@ -36,6 +37,13 @@ export const reducer = (state = initialState, action) => {
                 ...state,
                 isLoading: false,
                 error: action.payload
+            };
+
+        case REMOVE_CONTENT:
+            return{
+                ...state,
+                photoOfTheDay: null,
+                title: ''
             }
 
         default: return state;

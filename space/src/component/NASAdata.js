@@ -1,7 +1,7 @@
 import React from "react";
 import Loader from "react-loader-spinner";
 import { connect } from "react-redux";
-import { getPhoto } from '../store/actions/index'
+import { getPhoto, getRidPhoto } from '../store/actions/index'
 
 
 const NASAdata = props => {
@@ -30,7 +30,9 @@ const NASAdata = props => {
                 <Loader type="Ball-Triangle" color="#00BFFF" height="90" width="60" />
             )}
 
-            <button onClick={grabbingPhoto}>Click Me!</button>
+            <button onClick={grabbingPhoto}>Render Me!</button>
+
+            <button onClick={props.getRidPhoto}>Remove Me!</button>
 
 
 
@@ -52,5 +54,5 @@ const mapStateToProps = state => {
 
 export default connect(
     mapStateToProps,
-    { getPhoto }
+    { getPhoto, getRidPhoto }
 )(NASAdata)
